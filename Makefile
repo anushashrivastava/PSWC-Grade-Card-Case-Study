@@ -1,9 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -I.
 
-SRCS = main.c student.c
+SRCS = main2.c student2.c
 OBJS = $(SRCS:.c=.o)
-HEADER = student.h
 EXECUTABLE = finalgrade
 
 all: $(EXECUTABLE)
@@ -11,8 +10,8 @@ all: $(EXECUTABLE)
 $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-%.o: %.c $(HEADER)
+%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	del $(EXECUTABLE) $(OBJS)
+	rm -f $(EXECUTABLE) $(OBJS)
